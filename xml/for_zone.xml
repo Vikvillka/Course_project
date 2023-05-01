@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zone>
+<info id="id1">
+    <title>PRO ZONE</title>
+        <info_about_zone>Зал на 30 мест с мощными игровыми ПК и новейшими геймерскими девайсами в котором проходят киберспортивные чемпионаты по всем топовым игровым дисциплинам </info_about_zone>
+    
+        <hour_1>1 ЧАС</hour_1>
+        <cost_1>3Р</cost_1>
+    
+        <hour_2>3 ЧАСА</hour_2>
+        <cost_2>7Р</cost_2>
+    
+        <hour_3>5 ЧАСОВ</hour_3>
+        <cost_3>12Р</cost_3>
+
+        <li_content>Процессор - Intel Core i5-9400F</li_content>
+        <li_content>Видеокарта - Gigabyte GeForce RTX 2060</li_content>
+        <li_content>Оперативная память - 16Gb 2666Hz</li_content>
+        <li_content>SSD - GIGABYTE SSD 256GB</li_content>
+        <li_content>HDD - WD Blue Desktop 2 TB</li_content>
+        <li_content>Материнская плата - Gigabyte B360M DS3H</li_content>
+        <li_content>Экран: UltraGear LG 24GL650-B 23.6" Full HD - 144Г</li_content>
+       
+        <slider>img/forprozone.jpg</slider>
+        <slider>img/forprozone1.jpg</slider>
+        <slider>img/forprozone2.jpg</slider>
+        <slider>img/forprozone3.jpg</slider>
+        <slider>img/forprozone4.jpg</slider>    
+</info>
+
+<info id="id2">
+    <title>VIP ZONE</title>
+        <info_about_zone>Зал на 15 мест с лучшим оборудованием и новейшими геймерскими девайсами. В отличии от pro zone в этом зале можно запускать игры на самых высоких настройках. </info_about_zone>
+
+        <hour_1>1 ЧАС</hour_1>
+        <cost_1>5Р</cost_1>
+    
+        <hour_2>3 ЧАСА</hour_2>
+        <cost_2>12Р</cost_2>
+    
+        <hour_3>5 ЧАСОВ</hour_3>
+        <cost_3>20Р</cost_3>
+
+        <li_content>Процессор - Intel Core i7-9700</li_content>
+        <li_content>Видеокарта - Gigabyte GeForce RTX 2070</li_content>
+        <li_content>Оперативная память - 16Gb 2666Hz</li_content>
+        <li_content>SSD - GIGABYTE SSD 256GB</li_content>
+        <li_content>HDD - WD Blue Desktop 2 TB</li_content>
+        <li_content>Материнская плата - Gigabyte B360M DS3H</li_content>
+        <li_content>Экран: UltraGear LG 27GL650-F 23.6" Full HD - 144Гц</li_content>
+        
+        <slider>img/forvipzone.jpg</slider>
+        <slider>img/forvipzone1.jpg</slider>
+        <slider>img/forvipzone4.jpg</slider>
+        <slider>img/forvipzone3.jpg</slider>
+        <slider>img/forvipzone4.jpg</slider>
+</info>
+
+<info id="id3">
+    <title>PS ZONE</title>
+        <info_about_zone>Два отдельных зала с новейшими консолями PS5, удобными диванами, телевизорами с высоким разрешением,а также большим выбором настольных игр, помогут вам отлично провести время в компании друзей</info_about_zone>
+
+        <hour_1>1 ЧАС</hour_1>
+        <cost_1>10Р</cost_1>
+    
+        <hour_2>3 ЧАСА</hour_2>
+        <cost_2>24Р</cost_2>
+    
+        <hour_3>5 ЧАСОВ</hour_3>
+        <cost_3>35Р</cost_3>
+
+        <li_content>PlayStation 5</li_content>
+        <li_content>Контроллеры DualSense</li_content>
+        <li_content>PlayStation VR</li_content>
+        <li_content>Удобные диваны и кресла</li_content>
+        <li_content>Настольные игры</li_content>
+        <li_content>TV- 65"</li_content>
+        <li_content>Атмосферная подсветка</li_content>
+       
+        <slider>img/forpszone.jpg</slider>
+        <slider>img/forpszone1.jpg</slider>
+        <slider>img/peforpszone3.jpg</slider>
+        <slider>img/forpszone2.jpg</slider>
+        <slider>img/forpszone4.jpg</slider>     
+</info>
+</zone>    

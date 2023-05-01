@@ -1,0 +1,1365 @@
+$foncolor:#1c1c1c;
+$forheaderelements: #131313bd;
+$forelements:#13131399;
+$pink:#EE13BD;
+$blue:#36B7F7;
+$fortext:#C9C9C9;
+$fortexticon:#898989;
+
+// стили для заголовков 
+%fortitle{
+    color: $blue;
+    font-family: Catallina;
+    font-size: calc(20px + 14 * (100vw / 1920));// адаптивный текст 
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    text-align: center;
+}
+
+// стили для второстепенного текста
+%fortextinfo{
+    color: $fortext;
+    font-family: 'Inter', sans-serif;
+    font-size: calc(14px + 6 * (100vw / 1540));
+    text-align: center;
+}
+
+// подключение шрифтов
+$font:'Inter', sans-serif;
+@font-face {
+    font-family: Catallina;
+    src: url(../ofont.ru_Catallina.ttf);
+}
+
+// стиль для скроллбара
+* {
+    scrollbar-width: thin;
+    scrollbar-color: $foncolor $forelements;
+  }
+  // для Chrome/Edge/Safari
+  *::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+  }
+  *::-webkit-scrollbar-track {
+    background:$forelements;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: $blue;
+    border-radius: 5px;
+    border: 3px solid $forelements;
+  }
+
+html{
+    margin:0;
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    scroll-behavior: smooth;
+    background-color: $foncolor;
+}
+// блок с фоновым изображением
+.razmetka {
+    background-image: url(../img/fonshapka.jpg);
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 16/7.3; 
+    background-position: right;
+}
+
+// навигационное меню в header
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+    margin-top: 0;
+    background-color: $forheaderelements;
+    font-family: Catallina;
+    &#header_main{
+        margin-top: -19px;
+    }
+    // стили для навигационных ссылок
+    ul{
+        display: flex;
+	    flex-direction: row; 
+        align-items: center;
+        li{
+            display: flex;
+            width: max-content;
+        }
+        // треугольник (появляется только на маленьких устройствах)
+        .menu_arrow{
+            display: none;
+        }
+        // стили для ссылок искулючая кнопку "забронировать"
+        a:not(.bron_btn){
+        color: $fortext;
+        padding: 10px 12px 10px 12px;
+		text-decoration: none;
+        font-size: 14px;
+
+        // нижнее подчеркивание для ссылок
+        &:not(.logo)::after{
+            content:"";
+            display: block;
+            width: 20px;
+            padding-top: 3px;
+            border-bottom: 3px solid $pink;
+            animation:  show 1s  1 both;
+        }
+        &:hover {
+            cursor: pointer;
+            color: $fortexticon;
+		}
+        &:not(.logo):hover::after{
+            content:"";
+            animation: in 1s  1 both;
+        }
+        // анимация для ссылок
+        @keyframes in {
+            0% {
+            width: 0;
+            left: 0;
+            right: auto;
+            }
+            100% {
+            left: 0;
+            right: auto;
+            width: 100%;
+            }
+        }
+        @keyframes show {
+            0% {
+            left: 0;
+            right: auto;
+            width: 100%;
+            }
+            100% {
+            left: 0;
+            right: auto;
+            }
+        }
+    }
+    // стилизация кнопки "забронировать"
+        .bron_btn{
+            text-decoration: none;
+            color: $blue;
+        }
+        button{
+            margin:  0 20px 0 20px;
+            width: 13em;
+            height: 3.8em;
+            padding: 0.1em 0.25em; 
+            background-color: #212121;
+            font-size: 12px;
+            border: 0.08em solid $blue;
+            border-radius: 0.4em;
+        }
+        button span { 
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 0.4em;
+            width: 8.25em; 
+            height: 2em;
+            background-color: #212121;
+            border-radius: 0.3em; 
+            font-size: 1.5em;
+            border: 0.08em solid $blue; 
+            box-shadow: 0 0.4em 0.1em 0.019em $blue;
+        }
+        button span:hover {
+            transition: all 0.5s;
+            transform: translate(0, 0.4em);
+            box-shadow: 0 0 0 0 $blue;
+        }
+        button span:not(hover){
+            transition: all 0.5s;
+        }
+    }
+}
+
+// когда сайт октрыт на PC то выпадающий список реагирует на наведение
+header {
+    .menu_sub-list{
+        display: none;
+        position: absolute;
+    }
+    .menu_sub-list{
+        width: 0;
+        margin-left: -30px;
+    }
+    .li_zone:hover ul{
+        display: block;
+        color: $fortexticon;
+    }
+    .li_zone:hover ul a::after{
+        content:"";
+        animation: in 1s  1 both;
+    }
+    .li_zone ul li{
+        top:34px;
+        width: 100px;
+        font-size: 14px;
+        position: relative;
+        background-color: $forheaderelements;
+    }
+}
+
+// когда открыт на меленьком устройстве выпадающий список реагирует на нажатие на треугольник ".menu_arrow"
+body._touch .menu_list>li{
+    display: flex;
+    align-items: center;
+}
+body._touch .menu_arrow{
+    display: block;
+    width: 0;
+    height: 0;
+    transition: transform 0.3s ease 0s;
+    border-top: 10px solid $blue;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+body._touch header {
+    .menu_sub-list{
+        display: none;
+        position: absolute;
+    }
+    .menu_sub-list{
+        margin-left: 120px;
+    }
+    ._active ul{
+        display: block;
+        margin-top: 10px;
+    }
+    ._active ul a::after{
+        content:"";
+        animation: in 1s  1 both;
+    }
+    ._active .menu_arrow{
+        transform: rotate(-90deg);
+    }
+}
+
+// бургер меню
+.menu_btn{
+    display: none;
+}
+// логотип
+.wrap-logo {
+	display: flex;
+	align-items: center;
+    margin-left: 10px;
+    filter: drop-shadow(4px 4px 1px rgba(0, 0, 0, 0.3)); //тень от svg иконки
+}
+
+nav {
+	display: flex;
+	align-items: center;
+}
+
+// название компании и слоган
+.textaboutcompany{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+    background-color: $forheaderelements;
+    .text{
+    display: flex;
+    align-items: flex-start;
+    flex-flow: wrap;
+    align-content: space-between;
+    width: 298px;
+    padding-left: 20px;
+    p{
+        margin: 0 0 0 0;
+    }
+    //неоновая вывеска 
+    p.name{
+            font-family: Catallina;
+            font-size: 86px;
+            color: #36B7F7;
+            text-align: left;
+            letter-spacing: 0.23em;
+            animation: flicker 5s infinite alternate; 
+        }
+        p.undername{ 
+            font-family: Catallina;
+            font-size: 22px;
+            color: $pink;
+            text-align: left;
+            letter-spacing: 0.39em;
+            padding-left: 12px;
+        }
+        p.slogan{
+            font-size: 16px;
+            color:$fortexticon;
+            padding: 10px 0 0 28%;
+            font-family: $font;
+        }
+    }
+}
+//анимация для неоновой надписи
+@keyframes flicker {
+    0%, 20%, 24%, 30%, 60%, 100% {
+        text-shadow: 
+         0 0 5px #1173a4, 
+         0 0 15px #2185b8,
+         0 0 10px #2185b8,  
+         0 0 20px #2185b8, 
+         0 0 60px #00379c, 
+         0 0 90px #00379c;
+    }
+    28%, 50% {        
+        text-shadow: none;
+    }      
+  }
+
+// эффект для скролла
+._animate-items {
+    transform: translate(0, 50px);
+    opacity: 0;
+    transition: 0.8s ease 0s; 
+}
+.button{
+    transform: translate(-30px, 0px);
+    opacity: 0;
+    transition: 0.8s ease 0s; 
+}
+
+._activeScroll {
+    transform: translate(0, 0);
+    opacity: 1; 
+} 
+
+// секция с преимуществами комапниями(svg иконки)
+.advantages{
+    .icons_with_text{
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+    }
+    .text_icon{
+        @extend %fortextinfo;
+        margin: 10px 0 5px 0;
+    }
+    .text_under_icon{
+        color: $fortexticon;
+        font-family: 'Inter', sans-serif;
+
+        font-size: 16px;
+        text-align: center;
+        margin: 0 0 10px 0;
+    }
+}
+section h1{
+    @extend %fortitle;
+}
+.advantages div{
+    div div{
+        transition: 0.3s ; 
+        width: 160px;
+        height: 160px;
+        margin: 0 70px 0 70px; 
+        filter: drop-shadow(9px 9px 2px rgba(0, 0, 0, 0.3));
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+    .computer_icon{
+        background-image: url(../SVG/computer_icon-1.svg);
+        background-size: 190%;
+        background-position: -36px -68px;
+    }
+    .clock_icon{
+        background-image: url(../SVG/icons8-часы.svg);
+        background-size: cover;
+    }
+    .gamelist_icon{
+        background-image: url(../SVG/listwithgame_icon-1.svg);
+        background-size: 190%;
+        background-position: -45px -68px;
+    }
+    .support_icon{
+        background-image: url(../SVG/service_icon-1.svg);
+        background-size: 190%;
+        background-position: -40px -68px;
+    }
+}
+
+//секиция с оборудованием  
+section.equipment{
+    .block_about_zone{
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+        div.info_zone{
+            display: flex;
+            background-color: $forelements;
+            width: 80%;
+            border-radius: 30px;
+            // второй блок другое рассположение текста и изоброжения
+            &:nth-child(2){
+                display: flex;
+                flex-flow:row-reverse;
+            }
+            .text_info{
+                padding: 20px 20px 20px 30px;
+                margin: 10px;
+                max-width: 400px;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: space-around;
+                div.info_about_zone{
+                    border-bottom: 4px  solid $pink; // разделители
+                    width: 100%;
+                    &:nth-child(2){
+                    margin: 30px 30px 0 0;
+                    border-bottom: 4px  solid $pink;
+                    width: 80%;
+                    }
+                    h2{
+                        color: $blue;
+                        font-family: Catallina;
+                        font-size: calc(26px + 4 * (100vw / 1920));
+                        font-weight: normal;
+                        letter-spacing: 0.1em;
+                    }
+                }
+                div.oborudovanie{
+                    width: 100%;
+                    // список оборудования
+                    ul li{
+                        color: $fortext;
+                        margin-bottom: 10px;
+                        @extend %fortextinfo;
+                        text-align: start;
+                    }
+                }
+            }
+        }
+        div.info_zone{
+            margin: 10px 0 10px 0;
+            &:nth-child(2){
+                justify-content:flex-end;    
+            }
+            // стили для кнопки "подробнее"
+            button{
+                position: relative;
+                font-size: 14px;
+                font-family: Catallina;
+                padding: 10px 24px;
+                border: 0;
+                border-radius: 30px;
+                z-index: 1;
+                box-shadow: 5px 5px 8px black;
+                overflow: hidden;
+                cursor: pointer;
+                transition: 0.3s;
+                color: $blue;
+                border: 3px solid $blue ;
+                background-color: $forelements;
+                .a_btn{
+                    text-decoration: none;
+                    color: $blue;
+                    &:hover{
+                        color: $foncolor;
+                    }
+                }
+                 &:hover{
+                 color: $foncolor;
+                }
+                &::before{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    height: 100%;
+                    width: 0;
+                    top: 0;
+                    left: 0;
+                    border-radius: 30px;
+                    background-image: linear-gradient(
+                        to right,
+                        $blue 30%,
+                        $blue 100%);
+                    transition: 0.4s ease;
+                    z-index: -1;
+                }
+                &:hover::before{
+                    width: 100%;
+                }
+                &::after{
+                    content: ' \2192';// стрелочка
+                    padding-bottom: 3px;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    // стили для изображений залов
+    .img_zone1,.img_zone3{
+        display: flex;
+        width: 764px;
+        height: 540px;
+        margin-left: 30px;
+        flex: 1 1 460px;
+    }
+    .img_zone2{
+        display: flex;
+        width: 764px;
+        height: 540px;
+        margin-right:30px ;
+        flex: 1 1 460px;
+    }
+    .img_zone1{
+        background-image: url(../img/formain1.jpg);
+        background-size: cover;
+        border-radius: 0 30px 30px 0;
+    }
+    .img_zone2{
+        background-image: url(../img/formain2.jpg);
+        background-size: cover;
+        border-radius: 30px 0 0 30px;
+    }
+    .img_zone3{
+        background-image: url(../img/formain3.jpg);
+        background-size: cover;
+        border-radius: 0 30px 30px 0;
+    }
+}
+
+// секция со стоимостью 
+section.cost{
+    div.blocks_prise{
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        justify-content: center;
+        width: 81%;
+        .text_info{
+            flex: 1 0 250px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            background-color: $forelements;
+            width: 26%;
+            margin: 10px 10px;
+            border-radius: 30px;
+            h2{
+                color: $blue;
+                font-family: Catallina;
+                margin: 30px 0 20px 30px;
+                font-size: calc(26px + 4 * (100vw / 1920));
+                font-weight: normal;
+                letter-spacing: 0.1em;
+            }
+            div.hour_prise{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 30px 40px 30px 40px;
+                border-bottom: 4px  solid $pink;
+                // убрать у нижней строки разделитель 
+                &:nth-child(3){
+                    border: 0;
+                }
+                p{
+                    font-size: calc(20px + 4 * (100vw / 1920));
+                    font-family: Catallina;
+                    color:$fortext;
+                }
+            }
+        }
+    }
+}
+
+// секция с контактами
+section.contacts{
+    div.contact_zone{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: space-around;
+        width: 80%;
+        margin: auto;
+        gap: 30px;
+        margin-top: 35px;
+        // стили для карты
+        #map{
+            width: 46%;
+            flex: 2 0 260px;
+            border-radius: 30px;
+            // затемнение карты
+            filter: brightness(70%);
+            -ms-filter: brightness(70%);
+            -webkit-filter: brightness(70%);
+            -moz-filter: brightness(70%);   
+            -o-filter: brightness(70%);  
+        }
+        .contact_info{
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-around;
+            flex: 1 0 278px;
+            width: 32%;
+            background-color: $forelements;
+            border-radius: 30px;
+            .content {
+                width: 100%;
+                margin-top:20px ;
+            }
+            .title{
+                margin: 10px 0 30px 30px;
+                border-bottom: 4px solid #EE13BD;
+                width: 84%;
+                h1{
+                    margin: 0 0 10px 0;
+                    text-align: start;
+                }
+            }
+            // стили для списка с контактами
+            ul{
+                margin-top: 25px;
+                width: 75%;
+            }
+            ul li{
+                color: $fortexticon;
+                margin: 25px 0 10px 20px;
+                @extend %fortextinfo;
+                text-align: start;
+                span{
+                    color: $fortext;
+                }
+                &::marker{
+                    font-size: 30px;
+                    color: $blue;
+                }
+            }
+            // кнопка "забронировать"
+            button{
+                position: relative;
+                font-size: 14px;
+                font-family: Catallina;
+                margin: 8px 0 10px 30px ;
+                padding: 10px 24px;
+                border: 0;
+                border-radius: 30px;
+                z-index: 1;
+                box-shadow: 5px 5px 8px black;
+                overflow: hidden;
+                cursor: pointer;
+                transition: 0.3s;
+                border: 3px solid $blue;
+                background-color: $forelements;
+                color: $blue;
+                &:hover{
+                color: $foncolor;
+                }
+                .bron_btn:hover{
+                    color: $foncolor;
+                }
+                &::before{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    height: 100%;
+                    width: 0;
+                    top: 0;
+                    left: 0;
+                    border-radius: 30px;
+                    background-image: linear-gradient(
+                        to right,
+                        $blue 30%,
+                        $blue 100%);
+                    transition: 0.4s ease;
+                    z-index: -1;
+                }
+                &:hover::before{
+                    width: 100%;
+                }
+                .bron_btn{
+                    text-decoration: none;
+                    color: $blue;
+                }
+            }
+        }
+    }
+}
+
+// нижний колонтитул
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    align-items: center;
+    margin-top: 45px;
+    padding: 10px 10px;
+    background-color: $forelements;
+    height: 5%;
+    font-family: $font;
+    color: $fortexticon;
+    .rights_reserved{
+        display: block;
+        flex: 1 0 100px;
+        width: 10%;
+    }
+    & div{
+        display: flex;
+        align-items: center;
+        .wrap-contact{
+            margin-left: 20px;
+            p{
+                margin-right: 30px;
+               
+            }
+            div{
+                margin-right: 10px;
+               
+            }
+            .svg_tg_icon{
+                background-image: url(../SVG/icons8-телеграмма-app.svg);
+            }
+            .svg_vk_icon{
+                background-image: url(../SVG/icons8-vk-в-круге.svg);
+            }
+            .svg_tg_icon,.svg_vk_icon,a{ 
+                background-size: cover;
+                width: 35px;
+                height: 35px; 
+                &:hover{
+                    transform: scale(1.05);
+                }
+            }
+            
+        }
+    }   
+}
+
+//-------------модальное окно-----------------//
+
+// свойства модального окна по умолчанию 
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 20;
+    opacity: 0; 
+    -webkit-transition: opacity 200ms ease-in; 
+    -moz-transition: opacity 200ms ease-in;
+    transition: opacity 200ms ease-in; 
+    pointer-events: none; 
+    margin: 0;
+    padding: 0;
+}
+// при отображении модального окно 
+.modal:target {
+    opacity: 1; 
+	pointer-events: auto; 
+    overflow-y: auto;
+}
+// ширина модального окна и его отступы от экрана 
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+}
+// свойства для блока, содержащего контент модального окна 
+.modal-content {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #ffffff10;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+}
+
+// свойства для заголовка модального окна 
+.modal-header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    color: $blue;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 15px;
+    font-family: Catallina;
+    border-bottom: 2px solid $pink;
+}
+.modal-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+// свойства для кнопки "Закрыть" 
+.close {
+    float: right;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    color: $blue;
+    text-shadow: 0 1px 0 $blue;
+    opacity: .5;
+    text-decoration: none;
+}
+// свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении 
+.close:focus, .close:hover {
+    color: $blue;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .75;
+}
+// свойства для блока, содержащего основное содержимое окна 
+.modal-body {
+  position: relative;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 15px;
+    overflow: auto;
+}
+// форма для бронирования
+.form-style{
+	font: $font;
+	max-width: 400px;
+	margin: 10px auto;
+	padding: 16px;
+}
+
+.form-style input[type="text"],
+.form-style input[type="date"],
+.form-style input[type="number"],
+.form-style input[type="tel"],
+.form-style select 
+{
+	transition: all 0.30s ease-in-out;
+	outline: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	background-color: #27272767;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+	margin-bottom: 4%;
+	border: 2px solid $foncolor;
+	padding: 3%;
+    border-radius: 10px;
+	color: $blue;
+    font-size: 16px;
+	font-family: $font;
+}
+.form-style ::placeholder{
+    color: #767676;
+}
+option{
+    background-color: $forheaderelements;
+}
+.form-style input[type="text"]:focus,
+.form-style input[type="date"]:focus,
+.form-style input[type="number"]:focus,
+.form-style input[type="tel"]:focus,
+.form-style select:focus
+{
+	box-shadow: 0 0 5px $pink;
+	padding: 3%;
+	border: 1px solid $pink;
+}
+.form-style input[type="submit"]{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	padding: 3%;
+    background-color: $forheaderelements;
+    border: 2px solid $blue;
+	color: $blue;
+    font-family: $font;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;	
+}
+.form-style input[type="submit"]:hover{
+	background-color: $forheaderelements;
+    border: 2px solid $blue;
+    color: $blue;
+    border-radius: 10px;
+}
+
+//-------------прелоадер-------------//
+.preloader_main {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    background-color: $foncolor;
+    transition: all 0.5s;
+    opacity: 1;
+}
+.preloader {
+    position: relative;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 2px;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+.preloader > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: $blue;
+    transform: scale(0);
+    transform-origin: center center;
+    animation: preloader-4-anim 2s infinite linear;
+}
+.preloader > div:nth-of-type(1), 
+.preloader > div:nth-of-type(5), 
+.preloader > div:nth-of-type(9) {
+    animation-delay: 0.4s;
+}
+.preloader > div:nth-of-type(4), 
+.preloader > div:nth-of-type(8) {
+    animation-delay: 0.2s;
+    background-color: $pink;
+}
+.preloader > div:nth-of-type(2), 
+.preloader > div:nth-of-type(6) {
+    animation-delay: 0.6s;
+    background-color: $pink;
+}
+.preloader > div:nth-of-type(3) {
+    animation-delay: 0.8s;
+}
+@keyframes preloader-4-anim {
+    0% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+    80% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+.preloader-remove {
+    opacity: 0;
+    z-index: -10;
+}
+
+// -----------свойства для страниц с игровыми залами-----------//
+
+// стили для слайдера
+.slider{
+    display: flex;
+    justify-content: center;
+    padding: 0 35px;
+    margin: 30px 0;
+    align-items: center;
+}
+.wrapper{
+    max-width: 1400px;
+    position: relative;
+    i{
+        top: 50%;
+        height: 45px;
+        width: 45px;
+        cursor: pointer;
+        position: absolute;
+        font-size: 1.2rem;
+        text-align: center;
+        line-height: 45px;
+        background-color: #36B7F7;
+        border-radius: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.wrapper i:first-child{
+    left: -23px;
+}
+.wrapper i:last-child{
+    right: -23px;
+}
+.wrapper .carousel{
+    font-size: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+.carousel.dragging{
+    cursor: grab;
+    scroll-behavior: auto;
+    img{
+        pointer-events: none;
+    }
+}
+.carousel img{
+    height: 400px;
+    object-fit: cover;
+    margin-left: 14px;
+    width: calc(100%/3);
+    &:first-child{
+        margin-left: 0px;
+    }
+}
+
+div.zone_opisanie{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    div{
+        width: 60%;
+    }
+    .zone_name{
+        border-bottom: 4px  solid $pink;
+        h1{
+            color: $blue;
+            font-family: Catallina;
+            font-size: calc(20px + 14 * (100vw / 1920));// адaптивный текст 
+            font-weight: normal;
+            letter-spacing: 0.2em;
+            text-align: left;
+        }
+    }
+    .zone_text-opisanie{
+        p{
+            @extend %fortextinfo;
+        }
+    }
+}
+.zone_section{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+    div.zone_info_zone{
+        display: flex;
+        flex: 2 0 200px;
+        background-color: $forelements;
+        margin: 10px 10px;
+        border-radius: 30px;
+        .text_info{
+            padding: 0px 30px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            div.info_about_zone{
+                border-bottom: 4px  solid $pink; // разделители
+                width: 100%;
+                }
+                h2{
+                    color: $blue;
+                    font-family: Catallina;
+                    font-size: calc(20px + 10 * (100vw / 1920));
+                    font-weight: normal;
+                    letter-spacing: 0.1em;
+                }
+            }
+            div.oborudovanie{
+                width: 100%;
+                // список оборудования
+                ul{
+                    li{
+                    color: $fortext;
+                    margin-bottom: 10px;
+                    @extend %fortextinfo;
+                    text-align: start;
+                    }
+                }
+            }
+        }
+    }
+
+.zone_prise{
+   flex: 1 0 250px;
+    .text_info{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        background-color: $forelements;
+        margin: 10px 10px;
+        border-radius: 30px;
+        padding: 0 40px;
+        h2{
+            color: $blue;
+            font-family: Catallina;
+            font-size: calc(20px + 10 * (100vw / 1920));
+            font-weight: normal;
+            letter-spacing: 0.1em;
+        }
+        div.hour_prise{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 30px 0px;
+            border-bottom: 4px  solid $pink;
+            // убрать у нижней строки разделитель 
+            &:nth-child(3){
+                border: 0;
+            }
+            p{
+                font-size: calc(20px + 4 * (100vw / 1920));
+                font-family: Catallina;
+                color:$fortext;
+            }
+        }
+    }
+}
+
+//-------------страница с перечнью игр---------------//
+
+.game_title{
+    width: 94%;
+    text-align: right;
+    margin: auto;
+    border-bottom: 4px  solid $pink;
+    margin-bottom: 30px;
+        h1{
+            color: $blue;
+            font-family: Catallina;
+            font-size: calc(20px + 14 * (100vw / 1920));// адaптивный текст 
+            font-weight: normal;
+            letter-spacing: 0.2em;
+            text-align: left;
+        }
+}
+.game_section{
+    display: grid;
+    justify-content: center;
+    grid-template-columns:  repeat(auto-fit, 220px);;
+    grid-gap: calc(20px + 10 * (100vw / 1540));
+    .game_info{
+        background-color: $forelements;
+        border-radius: 30px;
+        .game_description{
+            padding: 10px;
+            p{
+                margin: 2px;
+                font-size: calc(12px + 4 * (100vw / 1540));
+                color: $fortext;
+                font-family: 'Inter', sans-serif;
+            }
+            p:nth-child(2){
+                color: $fortexticon;
+                font-family: 'Inter', sans-serif;
+                font-size: calc(12px + 4 * (100vw / 1540));
+                text-align: left;
+            }
+        }
+        .game_img{
+            background-size: cover;
+            width: 220px;
+            height: 300px;
+            border-radius: 30px 30px 0px 0px;
+        }
+    }
+}
+.game_for_pc{
+    ._img1{
+        background-image: url(../games_img/Dota_2.jpg);
+    }
+    ._img2{
+        background-image: url(../games_img/GTAV.jpg);
+    }
+    ._img3{
+        background-image: url(../games_img/PUBG_Battlegrounds.jpg);
+    }
+    ._img4{
+        background-image: url(../games_img/Apex_Legends.jpg);
+    }
+    ._img5{
+        background-image: url(../games_img/CSGO.jpg);
+    }
+    ._img6{
+        background-image: url(../games_img/Call_of_Duty.jpg);
+    }
+    ._img7{
+        background-image: url(../games_img/Fortnite-Battle-Royale.jpg);
+    }
+    ._img8{
+        background-image: url(../games_img/RUST.jpg);
+    }
+    ._img9{
+        background-image: url(../games_img/Valorant.jpg);
+    }
+    ._img10{
+        background-image: url(../games_img/Destiny2.jpg);
+    }
+    ._img11{
+        background-image: url(../games_img/Overwatch.jpg);
+    }
+    ._img12{
+        background-image: url(../games_img/League-of-Legends.jpg);
+    } 
+}
+.game_for_ps{
+    ._img1{
+        background-image: url(../games_img/fifa.jpg);
+    }
+    ._img2{
+        background-image: url(../games_img/DIRT.jpg);
+    }
+    ._img3{
+        background-image: url(../games_img/NHL.jpg);
+    }
+    ._img4{
+        background-image: url(../games_img/Mortal.jpg);
+    }
+    ._img5{
+        background-image: url(../games_img/NBA_2K21.jpg);
+    }
+    ._img6{
+        background-image: url(../games_img/HORIZEN.jpg);
+    }
+    ._img7{
+        background-image: url(../games_img/ufc4.jpg);
+    }
+    ._img8{
+        background-image: url(../games_img/Gran_Turismo_Sport.jpg);
+    }
+    ._img9{
+        background-image: url(../games_img/Detroit_Become_Human.jpg);
+    }
+    ._img10{
+        background-image: url(../games_img/God_of_War-_Ragnarök.jpg);
+    }
+    ._img11{
+        background-image: url(../games_img/TEKKEN7.jpg);
+    }
+    ._img12{
+        background-image: url(../games_img/The_Last_of_Us_Cover.jpg);
+    } 
+}
+
+//---------------страница с акциями------------------//
+
+section.stock{
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 80%;
+        margin: auto;
+        margin-block: 2rem;
+        gap: 2rem;
+    }
+    img {
+        max-width: 100%;
+        display: block;
+        object-fit: cover;
+    }
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: clamp(20rem, calc(20rem + 2vw), 22rem);
+        overflow: hidden;
+        border-radius: 30px;
+        background-color: $forelements;
+    }
+    .card__body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    .tag {
+        align-self: flex-start;
+        padding: 2px 10px;
+        border-radius: 1em;
+        font-size: 12px;
+        background: $blue;
+        background: linear-gradient(to bottom, #2F80ED, $blue);
+        color: $fortext;
+        font-family: 'Inter', sans-serif;
+    }
+    .card__body{ 
+        h4 {
+            font-size: 1.5rem;
+            color: $blue;
+            font-family: Catallina;
+            font-weight: normal;
+            padding-bottom: 10px;
+            border-bottom: 3px solid $pink;
+        }
+        p{
+            font-size: 1rem;
+            color: $fortexticon;
+            font-family: 'Inter', sans-serif;
+        }
+    }
+    .card_footer {
+        display: flex;
+        padding: 1rem;
+        margin-top: auto;
+        color: $fortexticon;
+        font-weight: normal;
+        font-family: 'Inter', sans-serif;
+    }
+    .user {
+        display: flex;
+        gap: .5rem;
+        img {
+        width: 35px;
+        height: 35px;
+        }
+    }
+    .user__info > small {
+        color: $blue;
+        font-family: 'Inter', sans-serif;
+    }
+}
+
+// подключение файла с медиазапросами 
+@import 'media.scss';
+
+
+

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel</title>
+    <link rel="shortcut icon" href="img/x-icon.png" type="img/x-icon">
+   `<link rel="stylesheet" href="scss_css/main.css">
+    
+    <style type="text/css">
+    	.st0{display:none;}
+    	.st1{display:inline;fill:#2D2D2B;stroke:#40DBFF;stroke-width:1.2;stroke-miterlimit:10;}
+    	.st2{fill:#20201E;}
+    	.st3{fill:#36B7F7;}
+    	.st4{fill:none;stroke:#1D1D1B;stroke-width:1.2;stroke-miterlimit:10;}
+    	.st5{fill:#EE13BD;}
+</style>
+</head>
+<body>
+    <!-- прелоадер (анимация во время загрузки сайта) -->
+    <div class="preloader_main">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- главная страница -->
+    <header id="header_main">
+        <!-- логотип -->
+        <div class="wrap-logo">
+            <a href="main.html" class="logo">
+                <svg width="80" height="80" viewBox="160 200 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="st2" d="M313.02,288.36c0.2,13.63,0.41,27.26,0.61,40.89"/>
+				    <path class="st3" d="M305.82,288.36c0.2,13.63,0.41,27.26,0.61,40.89c0.14,9.26,14.54,9.29,14.4,0 c-0.2-13.63-0.41-27.26-0.61-40.89C320.08,279.1,305.68,279.07,305.82,288.36L305.82,288.36z"/>
+				    <path class="st3" d="M329.24,296.05c0.17,6.48,0.34,12.96,0.52,19.44c0.25,9.25,14.65,9.29,14.4,0 c-0.17-6.48-0.34-12.96-0.52-19.44C343.39,286.8,328.99,286.77,329.24,296.05L329.24,296.05z"/>
+		            <path class="st4" d="M378.55,257.33"/>
+                    <path class="st5" d="M260.64,285.57c0.11,31.92,0.22,63.84,0.33,95.77c0.02,4.49,0.03,8.99,0.05,13.48 c0.02,4.36,4.64,8.58,9.11,6.94c21.17-7.74,42.34-15.48,63.51-23.22c11.81-4.32,23.61-8.63,35.42-12.95 c1.93-0.71,3.88-1.38,5.8-2.12c10.7-4.14,16.81-13.39,16.73-24.83c-0.16-22.46-0.03-45.13-1.23-67.56 c-0.24-4.44-2.56-6.22-5.54-8.86c-4.94-4.38-9.88-8.75-14.81-13.13c-5.37-4.76-10.73-9.51-16.1-14.27 c-4.08-3.62-8.01-7.65-13.37-9.32c-6.99-2.19-12.92-0.19-19.24,2.37c-6.98,2.83-13.95,5.67-20.93,8.5 c-11.49,4.67-22.98,9.34-34.47,14.01c-3.63,1.47-6.1,4.78-5.03,8.86c0.9,3.43,5.26,6.49,8.86,5.03 c16.65-6.77,33.31-13.54,49.96-20.3c5.44-2.21,13.6-7.42,19.1-3.33c6.64,4.94,12.62,11.18,18.81,16.67 c6.82,6.04,13.63,12.08,20.45,18.13c-0.7-1.7-1.41-3.39-2.11-5.09c0.24,13.24,0.48,26.48,0.72,39.71 c0.12,6.5,0.24,13,0.35,19.5c0.1,5.32,1.55,12.34-1.89,16.81c-2.31,3-5.88,3.87-9.24,5.09c-5.72,2.09-11.45,4.19-17.17,6.28 c-16.57,6.06-33.15,12.12-49.72,18.18c-10.9,3.98-21.8,7.97-32.7,11.95c3.04,2.31,6.08,4.63,9.11,6.94 c-0.11-31.92-0.22-63.84-0.33-95.77c-0.02-4.49-0.03-8.99-0.05-13.48C275.01,276.31,260.61,276.29,260.64,285.57L260.64,285.57 z"/>
+				    <path class="st3" d="M199.92,409.69c-19.48,6.53-39.39,11.62-58.75,18.5c3.04,2.31,6.08,4.63,9.11,6.94 c-0.23-11.76-0.45-23.51-0.68-35.27c-1.76,2.31-3.52,4.63-5.29,6.94c19.63-7.1,39.76-12.69,59.43-19.66 c5.62-1.99,7.4-9.92,1.72-13.16c-1.51-0.86-3-1.77-4.46-2.73c-0.94-0.63-2.79-2.35-1.19-0.78c0,3.39,0,6.79,0,10.18c0.01-0.01,0.01-0.01,0.02-0.02c-2.91,0.38-5.82,0.75-8.73,1.13c2.5,1.16,4.83,3.11,7.08,4.65c7.67,5.25,14.87-7.22,7.27-12.43c-19.79-13.57-39.93-26.61-59.43-40.59c1.19,2.07,2.38,4.14,3.57,6.22c0-14.98,0-29.96,0-44.94 c-3.61,2.07-7.22,4.14-10.83,6.22c10.89,8.28,21.79,16.57,32.68,24.85c3.12,2.37,8.03,0.47,9.85-2.58c2.2-3.67,0.5-7.51-2.58-9.85c-10.89-8.28-21.79-16.57-32.68-24.85c-4.51-3.43-10.83,1.26-10.83,6.22c0,13.84,0,27.67,0,41.51c0,2.75-0.27,5.44,1.55,7.79c2.51,3.25,7.23,5.58,10.58,7.93c3.45,2.42,6.92,4.82,10.41,7.2c13.43,9.19,27.04,18.11,40.47,27.31c2.42-4.14,4.85-8.29,7.27-12.43c-2.28-1.56-4.57-3.48-7.08-4.65c-3.23-1.5-6.01-1.06-8.73,1.13c-0.01,0.01-0.01,0.01-0.02,0.02c-3.02,2.42-2.54,7.69,0,10.18c2.37,2.33,5.71,4.13,8.56,5.76c0.57-4.39,1.15-8.77,1.72-13.16c-19.67,6.98-39.8,12.57-59.43,19.66c-2.96,1.07-5.35,3.61-5.29,6.94c0.23,11.76,0.45,23.51,0.68,35.27c0.08,4.38,4.58,8.56,9.11,6.94c19.36-6.88,39.28-11.98,58.75-18.5C212.49,420.65,208.74,406.74,199.92,409.69L199.92,409.69z"/>
+                    <path class="st5" d="M233.04,432.13c0-4.43,0-8.85,0-13.28c0-9.27-14.4-9.28-14.4,0c0,4.43,0,8.85,0,13.28C218.64,441.39,233.04,441.41,233.04,432.13L233.04,432.13z"/>
+                    <path class="st5" d="M261.7,416.63c0.12,7.7,0.19,15.4,0.22,23.1c0.01,3.55,0.02,7.1,0.03,10.65c0,2.75,0.24,5.36-1.75,7.53c-1.73,1.89-4.41,2.56-6.7,3.51c-3.27,1.36-6.52,2.76-9.78,4.17c-6.59,2.86-13.19,5.66-19.95,8.1c3.04,2.31,6.08,4.63,9.11,6.94c-1.17,1.32-2.34,2.64-3.5,3.95c-1.28,0-2.55,0-3.83,0c-1.4-1.43-2.8-2.86-4.2-4.29c0-1.28,0-2.55,0-3.83c2.54-2.63,2.78-3.31,0.7-2.05c3.61,2.07,7.22,4.14,10.83,6.22c0.43-8.26,0.44-16.5,0-24.75c-0.49-9.22-14.89-9.28-14.4,0c0.44,8.26,0.43,16.5,0,24.75c-0.3,5.82,6.25,8.47,10.83,6.22c5.85-2.88,9.11-11.37,2.2-15.33c-6.97-3.99-12.42,2.77-13.03,9.11c-0.43,4.47,4.98,8.43,9.11,6.94c7.93-2.86,15.66-6.2,23.39-9.55c7.06-3.06,15.56-5.14,20.57-11.35c5.31-6.58,4.8-14.12,4.78-22.12c-0.02-9.31-0.09-18.62-0.24-27.93C275.95,407.38,261.55,407.35,261.7,416.63L261.7,416.63z"/>
+                    <path class="st5" d="M232.88,324.38c-0.02-6.85,0.11-13.7,0.19-20.54c0.07-6.12-1.31-14,1.14-19.79c2.9-6.86,10.73-9.15,16.96-12.04c8.4-3.9,1.09-16.31-7.27-12.43c-8.87,4.11-17.53,7.85-22.13,17.21c-3.5,7.13-3,14.71-3.06,22.44c-0.06,8.39-0.26,16.77-0.23,25.16C218.51,333.65,232.91,333.67,232.88,324.38L232.88,324.38z"/>
+                    <path class="st3" d="M233.21,394.82c0.12-12.4,0.56-24.85,0.35-37.25c-0.12-6.9-4.67-8.92-9.7-12.32c-8.69-5.88-17.38-11.76-26.07-17.64c-7.7-5.21-14.91,7.26-7.27,12.43c10.74,7.27,21.48,14.53,32.23,21.8c-1.19-2.07-2.38-4.14-3.57-6.22c-0.12,13.06-0.24,26.13-0.37,39.19C218.72,404.09,233.12,404.1,233.21,394.82L233.21,394.82z"/>
+                </svg>
+            </a>
+        </div>
+        <!-- навигационное меню -->
+        <nav class="menu_body">
+            <ul class="menu_list">
+                <li class="li_zone"><a href="main.html#equipment">Наши залы</a>
+                    <span class="menu_arrow"></span>
+                    <ul class="menu_sub-list">
+                        <li class="sub-link"><a class="menu_sub-link" href="zone.html#id1">Pro zone</a></li>
+                        <li class="sub-link"><a class="menu_sub-link" href="zone.html#id2">VIP zone</a></li>
+                        <li class="sub-link"><a class="menu_sub-link" href="zone.html#id3">PS5 zone</a></li>
+                    </ul>
+                </li>
+                <li><a class="menu_link" href="game_list.html">Игротека</a></li>
+                <li><a class="menu_link" href="main.html#cost">Стоимость</a></li>
+                <li><a class="menu_link" href="stock.html">Акции</a></li>
+                <li><a class="menu_link" href="main.html#contacts">Контакты</a></li>
+                <li>
+                    <!-- стилизованная кнопка -->
+                    <button class="main_btn">
+                        <span><a class="bron_btn" href="#openModal">Забронировать</a></span>
+                    </button>
+                </li>
+            </ul> 
+            <!-- меню-бургер -->
+            <div class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- информация об играх -->
+<section class="game_for_pc"> 
+    <div class="game_title">
+            <div class="game_for"><h1>Игры для PC</h1></div>
+    </div>
+    <section class="game_section">
+        <div class="game_info _animate-items ">
+            <div class="game_img _img1"></div>
+            <div class="game_description">
+                <p class="name_of_game">DOTA2</p>
+                <p class="description">Командная компьютерная игра в жанре MOBA, разработанная и изданная корпорацией Valve. Игра является продолжением DotA.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img2"></div>
+            <div class="game_description">
+                <p class="name_of_game">GTA5</p>
+                <p class="description">Компьютерная игра в жанре action-adventure с открытым миром, разработанная компанией Rockstar North и изданная компанией Rockstar Games. </p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img3"></div>
+            <div class="game_description">
+                <p class="name_of_game">PlayerUnknown's Battlegrounds</p>
+                <p class="description">Онлайн-игра в жанре королевской битвы, разрабатываемая и издаваемая студией PUBG Corporation.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img4"></div>
+            <div class="game_description">
+                <p class="name_of_game">Apex Legends</p>
+                <p class="description">Компьютерная игра в жанре многопользовательского геройского шутера от первого лица и королевской битвы.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img5"></div>
+            <div class="game_description">
+                <p class="name_of_game">Counter-Strike: Global Offensive</p>
+                <p class="description">Многопользовательская компьютерная игра, разработанная компаниями Valve и Hidden Path Entertainment.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img6"></div>
+            <div class="game_description">
+                <p class="name_of_game">Call of Duty: Black Ops 4</p>
+                <p class="description">Компьютерная игра в жанре шутера от первого лица, пятнадцатая во франшизе Call of Duty и четвёртая основная игра в сюжетной подсерии Black Ops.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img7"></div>
+            <div class="game_description">
+                <p class="name_of_game">Fortnite</p>
+                <p class="description">Компьютерная онлайн-игра, разработанная американской компанией Epic Games совместно с People Can Fly и выпущенная в ранний доступ в 2017 году.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img8"></div>
+            <div class="game_description">
+                <p class="name_of_game">Rust</p>
+                <p class="description">Компьютерная игра в жанре симулятора выживания, была создана независимой британской компанией Facepunch Studios.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img9"></div>
+            <div class="game_description">
+                <p class="name_of_game">Valorant</p>
+                <p class="description">Многопользовательская компьютерная игра, разработанная и издаваемая компанией Riot Games.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img10"></div>
+            <div class="game_description">
+                <p class="name_of_game">Destiny 2</p>
+                <p class="description">Компьютерная массовая многопользовательская онлайн-игра в жанре шутера от первого лица, разработанная американской компанией Bungie.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img11"></div>
+            <div class="game_description">
+                <p class="name_of_game">Overwatch</p>
+                <p class="description">Многопользовательская компьютерная игра в жанре геройского шутера от первого лица, разработанная и выпущенная компанией Blizzard Entertainment</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img12"></div>
+            <div class="game_description">
+                <p class="name_of_game">League of Legends</p>
+                <p class="description">Многопользовательская компьютерная игра в жанре MOBA, разработанная и выпущенная американской компанией Riot Games в 2009 году.</p>
+            </div>
+        </div>
+    </section>
+</section>
+<section class="game_for_ps"> 
+    <div class="game_title">
+            <div class="game_for"><h1>Игры для PS5</h1></div>
+    </div>
+    <section class="game_section">
+        <div class="game_info _animate-items">
+            <div class="game_img _img1"></div>
+            <div class="game_description">
+                <p class="name_of_game">FIFA 23</p>
+                <p class="description">Компьютерная игра в жанре спортивного симулятора, 30-я в серии FIFA, разработанная компанией EA Vancouver под издательством Electronic Arts.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img2"></div>
+            <div class="game_description">
+                <p class="name_of_game">Dirt 5</p>
+                <p class="description">Компьютерная игра в жанре автосимулятора, разработанная и изданная британской компанией Codemasters.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img3"></div>
+            <div class="game_description">
+                <p class="name_of_game">NHL 20</p>
+                <p class="description">Двадцать девятая игра серии NHL, созданная разработчиками EA Canada и изданная EA Sports. Игра была выпущена для консолей восьмого поколения PlayStation 4.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img4"></div>
+            <div class="game_description">
+                <p class="name_of_game">Mortal Kombat 11</p>
+                <p class="description">Компьютерная игра в жанре файтинг, разработанная американской студией NetherRealm Studios под издательством WB Games для игровых платформ PlayStation 4, Xbox One.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img5"></div>
+            <div class="game_description">
+                <p class="name_of_game">NBA 2K21</p>
+                <p class="description">Это баскетбольный спортивный симулятор, разработанный Visual Concepts и изданный 2K Sports, основанный на Национальной баскетбольной ассоциации.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img6"></div>
+            <div class="game_description">
+                <p class="name_of_game">Horizon Запретный Запад</p>
+                <p class="description">Компьютерная игра в жанре Action/RPG с открытым миром, разработанная нидерландской студией Guerrilla Games и изданная Sony Interactive Entertainment.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img7"></div>
+            <div class="game_description">
+                <p class="name_of_game">UFC 4</p>
+                <p class="description">Как и его предшественник, UFC 4 - это файтинг, основанный на промоушене смешанных боевых искусств Ultimate Fighting Championship (UFC). </p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img8"></div>
+            <div class="game_description">
+                <p class="name_of_game">Gran Turismo Sport</p>
+                <p class="description">Гоночная видеоигра, разработанная Polyphony Digital и изданная Sony Interactive Entertainment для PlayStation 4.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img9"></div>
+            <div class="game_description">
+                <p class="name_of_game">Detroit: Become Human</p>
+                <p class="description">Приключенческая компьютерная игра с элементами интерактивного кинематографа, разработанная французской компанией Quantic Dream.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img10"></div>
+            <div class="game_description">
+                <p class="name_of_game">God of War: Ragnarök</p>
+                <p class="description">Компьютерная игра в жанре action-adventure с элементами hack and slash, разработанная компанией Santa Monica Studio и изданная Sony Interactive Entertainment.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img11"></div>
+            <div class="game_description">
+                <p class="name_of_game">Tekken 7</p>
+                <p class="description">Игра в жанре файтинга, разработанная Bandai Namco Entertainment. Это девятая игра в серии Tekken и первая игра, которая работает на движке Unreal Engine 4.</p>
+            </div>
+        </div>
+        <div class="game_info _animate-items">
+            <div class="game_img _img12"></div>
+            <div class="game_description">
+                <p class="name_of_game">The Last of Us </p>
+                <p class="description">Компьютерная игра в жанре action-adventure с элементами survival horror и стелс-экшена, разработанная студией Naughty Dog и изданная Sony Computer Entertainment.</p>
+            </div>
+        </div>
+    </section>
+</section>
+
+    <footer>
+        <div>
+            <!-- логотип -->
+            <div class="wrap-logo">
+                <a href="main.html" class="logo">
+                    <svg width="80" height="80" viewBox="160 200 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="st2" d="M313.02,288.36c0.2,13.63,0.41,27.26,0.61,40.89"/>
+                        <path class="st3" d="M305.82,288.36c0.2,13.63,0.41,27.26,0.61,40.89c0.14,9.26,14.54,9.29,14.4,0 c-0.2-13.63-0.41-27.26-0.61-40.89C320.08,279.1,305.68,279.07,305.82,288.36L305.82,288.36z"/>
+                        <path class="st3" d="M329.24,296.05c0.17,6.48,0.34,12.96,0.52,19.44c0.25,9.25,14.65,9.29,14.4,0 c-0.17-6.48-0.34-12.96-0.52-19.44C343.39,286.8,328.99,286.77,329.24,296.05L329.24,296.05z"/>
+                        <path class="st4" d="M378.55,257.33"/>
+                        <path class="st5" d="M260.64,285.57c0.11,31.92,0.22,63.84,0.33,95.77c0.02,4.49,0.03,8.99,0.05,13.48 c0.02,4.36,4.64,8.58,9.11,6.94c21.17-7.74,42.34-15.48,63.51-23.22c11.81-4.32,23.61-8.63,35.42-12.95 c1.93-0.71,3.88-1.38,5.8-2.12c10.7-4.14,16.81-13.39,16.73-24.83c-0.16-22.46-0.03-45.13-1.23-67.56 c-0.24-4.44-2.56-6.22-5.54-8.86c-4.94-4.38-9.88-8.75-14.81-13.13c-5.37-4.76-10.73-9.51-16.1-14.27 c-4.08-3.62-8.01-7.65-13.37-9.32c-6.99-2.19-12.92-0.19-19.24,2.37c-6.98,2.83-13.95,5.67-20.93,8.5 c-11.49,4.67-22.98,9.34-34.47,14.01c-3.63,1.47-6.1,4.78-5.03,8.86c0.9,3.43,5.26,6.49,8.86,5.03 c16.65-6.77,33.31-13.54,49.96-20.3c5.44-2.21,13.6-7.42,19.1-3.33c6.64,4.94,12.62,11.18,18.81,16.67 c6.82,6.04,13.63,12.08,20.45,18.13c-0.7-1.7-1.41-3.39-2.11-5.09c0.24,13.24,0.48,26.48,0.72,39.71 c0.12,6.5,0.24,13,0.35,19.5c0.1,5.32,1.55,12.34-1.89,16.81c-2.31,3-5.88,3.87-9.24,5.09c-5.72,2.09-11.45,4.19-17.17,6.28 c-16.57,6.06-33.15,12.12-49.72,18.18c-10.9,3.98-21.8,7.97-32.7,11.95c3.04,2.31,6.08,4.63,9.11,6.94 c-0.11-31.92-0.22-63.84-0.33-95.77c-0.02-4.49-0.03-8.99-0.05-13.48C275.01,276.31,260.61,276.29,260.64,285.57L260.64,285.57 z"/>
+                        <path class="st3" d="M199.92,409.69c-19.48,6.53-39.39,11.62-58.75,18.5c3.04,2.31,6.08,4.63,9.11,6.94 c-0.23-11.76-0.45-23.51-0.68-35.27c-1.76,2.31-3.52,4.63-5.29,6.94c19.63-7.1,39.76-12.69,59.43-19.66 c5.62-1.99,7.4-9.92,1.72-13.16c-1.51-0.86-3-1.77-4.46-2.73c-0.94-0.63-2.79-2.35-1.19-0.78c0,3.39,0,6.79,0,10.18c0.01-0.01,0.01-0.01,0.02-0.02c-2.91,0.38-5.82,0.75-8.73,1.13c2.5,1.16,4.83,3.11,7.08,4.65c7.67,5.25,14.87-7.22,7.27-12.43c-19.79-13.57-39.93-26.61-59.43-40.59c1.19,2.07,2.38,4.14,3.57,6.22c0-14.98,0-29.96,0-44.94 c-3.61,2.07-7.22,4.14-10.83,6.22c10.89,8.28,21.79,16.57,32.68,24.85c3.12,2.37,8.03,0.47,9.85-2.58c2.2-3.67,0.5-7.51-2.58-9.85c-10.89-8.28-21.79-16.57-32.68-24.85c-4.51-3.43-10.83,1.26-10.83,6.22c0,13.84,0,27.67,0,41.51c0,2.75-0.27,5.44,1.55,7.79c2.51,3.25,7.23,5.58,10.58,7.93c3.45,2.42,6.92,4.82,10.41,7.2c13.43,9.19,27.04,18.11,40.47,27.31c2.42-4.14,4.85-8.29,7.27-12.43c-2.28-1.56-4.57-3.48-7.08-4.65c-3.23-1.5-6.01-1.06-8.73,1.13c-0.01,0.01-0.01,0.01-0.02,0.02c-3.02,2.42-2.54,7.69,0,10.18c2.37,2.33,5.71,4.13,8.56,5.76c0.57-4.39,1.15-8.77,1.72-13.16c-19.67,6.98-39.8,12.57-59.43,19.66c-2.96,1.07-5.35,3.61-5.29,6.94c0.23,11.76,0.45,23.51,0.68,35.27c0.08,4.38,4.58,8.56,9.11,6.94c19.36-6.88,39.28-11.98,58.75-18.5C212.49,420.65,208.74,406.74,199.92,409.69L199.92,409.69z"/>
+                        <path class="st5" d="M233.04,432.13c0-4.43,0-8.85,0-13.28c0-9.27-14.4-9.28-14.4,0c0,4.43,0,8.85,0,13.28C218.64,441.39,233.04,441.41,233.04,432.13L233.04,432.13z"/>
+                        <path class="st5" d="M261.7,416.63c0.12,7.7,0.19,15.4,0.22,23.1c0.01,3.55,0.02,7.1,0.03,10.65c0,2.75,0.24,5.36-1.75,7.53c-1.73,1.89-4.41,2.56-6.7,3.51c-3.27,1.36-6.52,2.76-9.78,4.17c-6.59,2.86-13.19,5.66-19.95,8.1c3.04,2.31,6.08,4.63,9.11,6.94c-1.17,1.32-2.34,2.64-3.5,3.95c-1.28,0-2.55,0-3.83,0c-1.4-1.43-2.8-2.86-4.2-4.29c0-1.28,0-2.55,0-3.83c2.54-2.63,2.78-3.31,0.7-2.05c3.61,2.07,7.22,4.14,10.83,6.22c0.43-8.26,0.44-16.5,0-24.75c-0.49-9.22-14.89-9.28-14.4,0c0.44,8.26,0.43,16.5,0,24.75c-0.3,5.82,6.25,8.47,10.83,6.22c5.85-2.88,9.11-11.37,2.2-15.33c-6.97-3.99-12.42,2.77-13.03,9.11c-0.43,4.47,4.98,8.43,9.11,6.94c7.93-2.86,15.66-6.2,23.39-9.55c7.06-3.06,15.56-5.14,20.57-11.35c5.31-6.58,4.8-14.12,4.78-22.12c-0.02-9.31-0.09-18.62-0.24-27.93C275.95,407.38,261.55,407.35,261.7,416.63L261.7,416.63z"/>
+                        <path class="st5" d="M232.88,324.38c-0.02-6.85,0.11-13.7,0.19-20.54c0.07-6.12-1.31-14,1.14-19.79c2.9-6.86,10.73-9.15,16.96-12.04c8.4-3.9,1.09-16.31-7.27-12.43c-8.87,4.11-17.53,7.85-22.13,17.21c-3.5,7.13-3,14.71-3.06,22.44c-0.06,8.39-0.26,16.77-0.23,25.16C218.51,333.65,232.91,333.67,232.88,324.38L232.88,324.38z"/>
+                        <path class="st3" d="M233.21,394.82c0.12-12.4,0.56-24.85,0.35-37.25c-0.12-6.9-4.67-8.92-9.7-12.32c-8.69-5.88-17.38-11.76-26.07-17.64c-7.7-5.21-14.91,7.26-7.27,12.43c10.74,7.27,21.48,14.53,32.23,21.8c-1.19-2.07-2.38-4.14-3.57-6.22c-0.12,13.06-0.24,26.13-0.37,39.19C218.72,404.09,233.12,404.1,233.21,394.82L233.21,394.82z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="wrap-contact">
+                <p>г. Минск, ул. Белорусская 21<br>+375-29-315-87-67</p>
+                <!-- svg иконки на соцсети -->
+                <div class="svg_tg_icon"><a href="https://t.me/vikvilkaa"></a></div>
+                <div class="svg_vk_icon"><a href="https://vk.com/viiiilllka"></a></div>
+            </div>
+        </div>
+        <div>
+            <p class="rights_reserved">© 2023 Pixel, Inc., an Pixel Group company. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- форма для бронирования в модальном окне -->
+    <div id="openModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Бронирование мест</h3>
+                    <a href="#close" title="Close" class="close">×</a>
+                </div>
+                <div class="modal-body">
+                    <div class="form-style"> 
+                        <form>
+                            <input type="text" name="name" placeholder="Как к вам обращаться?" id="name" required />
+                            <input type="tel"  name="phone" placeholder="Ваш номер телефона" id="tel" maxlength="21" required />
+                            <select id="zone" placeholder="zone">
+                                <option value="pro_zone">PRO zone</option>
+                                <option value="vip_zone">VIP zone</option>
+                                <option value="ps_zone" selected>PS5 zone</option>
+                            </select>
+                            <input type="date"  name="datetime" placeholder="Дата бронирования" id="data" required />
+                            <input type="number"  name="houwer" placeholder="Количество часов" id="houwer" required />
+                            <input type="submit" value="Забронировать" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</body>
+<script src="js/scroll.js"></script>
+<script src="js/main.js"></script>
+</html>

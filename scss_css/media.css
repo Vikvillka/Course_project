@@ -1,0 +1,198 @@
+@charset "UTF-8";
+@media (min-width: 768px) {
+  .modal-content {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+}
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 500px;
+    margin: 30px auto;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .carousel img {
+    width: 100% !important;
+  }
+  .razmetka {
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 9/16;
+    background-position: center;
+  }
+  div.info_zone {
+    width: 94% !important;
+  }
+  .zone_section {
+    width: 100% !important;
+  }
+  .game_section {
+    grid-template-columns: repeat(auto-fit, 180px);
+  }
+  .game_section .game_img {
+    background-size: cover;
+    width: 180px !important;
+    height: 210px !important;
+    border-radius: 30px 30px 0px 0px;
+  }
+}
+@media only screen and (max-width: 880px) {
+  .carousel img {
+    width: 50%;
+  }
+  .textaboutcompany {
+    width: 100%;
+  }
+  .textaboutcompany p.name {
+    font-size: 76px !important;
+  }
+  .textaboutcompany p.undername {
+    font-size: 19px !important;
+  }
+  .textaboutcompany p.slogan {
+    font-size: 14px;
+    text-align: center;
+    padding: 12px 30px 0 30px !important;
+  }
+  header {
+    background-color: rgba(19, 19, 19, 0.7411764706);
+  }
+  header .wrap-logo svg {
+    width: 60px;
+    height: 60px;
+  }
+  footer p {
+    margin-right: 10px !important;
+  }
+  footer .wrap-logo svg {
+    width: 41px;
+    height: 46px;
+  }
+  .menu_list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .menu-btn {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 11;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+  .menu-btn span {
+    width: 30px;
+    height: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s;
+    background-color: #36B7F7;
+  }
+  .menu-btn span:nth-of-type(2) {
+    top: calc(50% - 10px);
+  }
+  .menu-btn span:nth-of-type(3) {
+    top: calc(50% + 10px);
+  }
+  .active_span span:nth-child(1) {
+    top: 8px;
+    transform: rotate(45deg);
+    margin-left: -14px;
+    margin-top: 5px;
+  }
+  .active_span span:nth-child(2) {
+    opacity: 0;
+  }
+  .active_span span:nth-child(3) {
+    bottom: 8px;
+    margin-left: -14px;
+    margin-top: -11px;
+    transform: rotate(-45deg);
+  }
+  .menu_list {
+    position: fixed;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    padding-top: 60px;
+    background: rgba(19, 19, 19, 0.7411764706);
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    z-index: 10;
+  }
+  .menu_list.activee {
+    transform: translateX(0);
+  }
+  .li_zone ul li {
+    background-color: rgba(245, 222, 179, 0) !important;
+  }
+  body._pc .menu_sub-list {
+    position: relative !important;
+    margin: 0 -140px;
+    margin-bottom: 30px;
+  }
+  .main_btn {
+    border: none !important;
+    margin-left: 0 !important;
+    margin-top: 20px;
+  }
+  .main_btn span {
+    bottom: 0 !important;
+    box-shadow: 0 0 0 0 !important;
+  }
+  .main_btn span:hover {
+    transition: none !important;
+    transform: none !important;
+  }
+  .main_btn span:not(hover) {
+    transition: none !important;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  div.info_zone {
+    flex-direction: column-reverse;
+  }
+  div.info_zone:nth-child(2) {
+    flex-direction: column-reverse !important;
+  }
+  div.info_zone .img_zone1, div.info_zone .img_zone2, div.info_zone .img_zone3 {
+    margin: 0 !important;
+    border-radius: 30px 30px 0 0;
+    width: auto;
+  }
+  .advantages div div div {
+    transition: 0.3s;
+    width: 100px;
+    height: 100px;
+    margin: 0 40px 0 40px;
+    filter: drop-shadow(9px 9px 2px rgba(0, 0, 0, 0.3));
+  }
+  .advantages div div div:hover {
+    transform: scale(1.05);
+  }
+  .advantages div .computer_icon {
+    background-image: url(../SVG/computer_icon-1.svg);
+    background-size: 210%;
+    background-position: -30px -58px;
+  }
+  .advantages div .clock_icon {
+    background-image: url(../SVG/icons8-часы.svg);
+    background-size: cover;
+  }
+  .advantages div .gamelist_icon {
+    background-image: url(../SVG/listwithgame_icon-1.svg);
+    background-size: 200%;
+    background-position: -29px -45px;
+  }
+  .advantages div .support_icon {
+    background-image: url(../SVG/service_icon-1.svg);
+    background-size: 210%;
+    background-position: -32px -50px;
+  }
+}/*# sourceMappingURL=media.css.map */
